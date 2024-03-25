@@ -1,0 +1,14 @@
+{
+    "cucumberautocomplete.steps": ["src/test/java/steps/*.java"],
+    "cucumberautocomplete.syncfeatures": "test/features/*.feature",
+    "cucumberautocomplete.strictGherkinCompletion": true,
+    "cucumberautocomplete.strictGherkinValidation": true,
+ 
+
+
+
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "git.ignoreLimitWarning": true,
+    "java.jdt.ls.java.home": "C:\\Users\\sir_j\\Downloads\\programasPractica\\jdk-17.0.10"
+}
