@@ -1,13 +1,20 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-
 public class PaginaPrincipal extends BasePage {
 
-    public PaginaPrincipal(WebDriver driver) {
+    public PaginaPrincipal() {
+        //Constructor de la supeclase inacializado
+        
         super(driver);
-        //TODO Auto-generated constructor stub
+        
     }
 
+    //Metodo patra navegas a www.freerangetester.com
+    public void navigatetoFreeRangeTester(){
+        
+        navigateTo("https://www.freerangetesters.com");
+        
+
+    }
     
 }

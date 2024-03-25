@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features ="src\\test\\resources\\features\\FreeRangeNavegacion.feature", //Directorio de archivos . feature
-                glue = "src\\test\\java\\steps", // PAquete donde tyenemos nuestras clases definiendo los steps escritos en el feature file
+                glue = "steps", // PAquete donde tyenemos nuestras clases definiendo los steps escritos en el feature file
                 plugin = { "pretty", "html:target/cucumber-reports" }
 )
 
