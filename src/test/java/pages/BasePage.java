@@ -2,8 +2,12 @@ package pages;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -60,11 +64,37 @@ public class BasePage {
     }
 
     //Metodo static para navegar a una URL
-
     public static void navigateTo(String url){
         
         driver.get(url);
 
     }
+
+    public static void closeBrowser(){
+        //Cierra el browser
+        driver.quit();
+
+
+    }
+    
+    //creamos una clase privada por que no necesito compartir esta condicion solo las acciones
+    private WebElement Find (String locator) {
+        /*regreso mi espera que ya habia definido, hasta que se cumpla condicion 
+        *la condicion seria que encuentre la presencia del xpath por el locator y asi 
+        * me ahorros todos los wait   
+        */
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+    }
+
+    public void clickElement (String locator){
+        /*Cuando yo lo vaya a llamar voy a llamar este find locator 
+        *Por que este finda me va a espera el tiempo que yo estipule 
+        */
+        Find(locator).click();
+
+    }
+
+
+
 
 }
