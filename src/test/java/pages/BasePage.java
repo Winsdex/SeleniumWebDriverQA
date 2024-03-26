@@ -1,6 +1,7 @@
 package pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -93,6 +95,34 @@ public class BasePage {
         Find(locator).click();
 
     }
+
+       public void write(String locator, String keyTosend){
+        Find(locator).clear(); //Esto ace que borre en automatico el texto que se encintraba ya ahi
+        Find(locator).sendKeys(keyTosend);
+
+       } 
+       public void selectFromDropdpwnByValue(String locator, String value){
+            Select dropdown = new Select(Find(locator));
+            //Aqui esta la parte del codigo donde nos va permitir hacer el uso del select por el valor
+            dropdown.selectByValue(value);
+       }
+
+       //Difrencias importantes index es integer por que es una posicioo
+       public void selectFromDropdpwnByIndex(String locator, Integer index){
+        Select dropdown = new Select(Find(locator));
+        //Aqui esta la parte del codigo donde nos va permitir hacer el uso del select por el index
+        dropdown.selectByIndex(index);
+
+        }
+
+        public int dropdownSize(String locator){
+            Select dropdown = new Select(Find(locator));
+            List<WebElement> dropdownOptions = dropdown.getOptions();
+            
+            return dropdownOptions.size();
+
+
+        }
 
 
 

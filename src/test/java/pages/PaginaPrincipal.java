@@ -17,6 +17,7 @@ public class PaginaPrincipal extends BasePage {
         navigateTo("https://www.freerangetesters.com");
         clickElement(searchButton);
         
+        
 
     }
     
