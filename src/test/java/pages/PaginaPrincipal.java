@@ -3,12 +3,13 @@ package pages;
 public class PaginaPrincipal extends BasePage {
 
     private String sectionLink = "//a[normalize-space()='%s' and @href]";
-
+    private String elegirUnPlan = "//a[normalize-space()='Elegir Plan' and @href]";
+    
     public PaginaPrincipal() {
         //Constructor de la supeclase inacializado
         
         super(driver);
-        
+         
     }
 
     //Metodo patra navegas a www.freerangetester.com
@@ -25,6 +26,9 @@ public class PaginaPrincipal extends BasePage {
         clickElement(xpathSection);
 
 
+    }
+    public void clickOnElegirUnPlan(){
+        clickElement(elegirUnPlan);
     }
 
 }

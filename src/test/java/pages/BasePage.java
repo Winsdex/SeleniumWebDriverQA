@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage { 
+    
 
   /*
    * Declaracion de una variable static driver de tipo Webdriver
@@ -45,6 +46,8 @@ public class BasePage {
      */
 
     static {
+        
+
         WebDriverManager.chromedriver().setup();
 
         /*
