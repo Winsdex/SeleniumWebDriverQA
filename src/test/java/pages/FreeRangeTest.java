@@ -20,7 +20,7 @@ public class FreeRangeTest {
     @Test
     public void NavegamosFreeRangeTesters() {
         //abre la pagina 
-        driver.get("https://www.freerangetesters.com");
+        driver.get("https://www.freerangetesters.com/");
         
     }
     @AfterMethod
