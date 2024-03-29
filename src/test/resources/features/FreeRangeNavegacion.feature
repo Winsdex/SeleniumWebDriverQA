@@ -25,7 +25,7 @@ Feature: Navigation bar
     @Plans 
     Scenario: Users can select a plan when signing up
         When I select Elegir Plan
-        Then The client can validate the option in the steps
+        Then I can validate the option in the steps
         
 
 

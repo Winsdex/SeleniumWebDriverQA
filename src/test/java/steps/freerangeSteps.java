@@ -1,7 +1,5 @@
 package steps;
 
-import static org.junit.Assert.fail;
-
 import java.util.Arrays;
 import java.util.List;
 import org.testng.Assert;
@@ -22,30 +20,30 @@ public class freerangeSteps {
     PaginaRegistro registros = new PaginaRegistro();
 
 
-    @Given("(I|The user|The client) (navigate|navigates) to www.freerangetesters.com")
+    @Given("I navigate to www.freerangetesters.com")
     public void iNAvigateToFRT(){
         landingPage.navigatetoFreeRangeTester();
     }
 
-    @When("(I|The user|The client) (go|goes) to {word} using navigation bar")
+    @When("I go to {word} using navigation bar")
     public void navigationBarUse(String section){
         
         landingPage.clickOnNavigationBar(section);
 
     }
 
-    @And("(select|selects) Introducción al Testing")
+    @And("select Introducción al Testing")
     public void navigateToIntro() {
         cursosPage.clickFundamentosTestingLink();
         fundamentosPage.clickProgamacionPAraTestersLink();
  
     }
-    @When("(I|The user|The client) (select|selects) Elegir Plan")
+    @When("I select Elegir Plan")
     public void selecionarElegirUnPlan(){
         landingPage.clickOnElegirUnPlan();
     }
 
-    @Then ("(I|The user|The client) can validate the option in the steps")
+    @Then ("I can validate the option in the steps")
     public void validateCheckoutPlans(){
 
         List<String> lista = registros.returnPlanDropwnValues();
