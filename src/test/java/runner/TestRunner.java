@@ -10,12 +10,12 @@ import pages.BasePage;
 @RunWith(Cucumber.class)
 @CucumberOptions(features ="src\\test\\resources\\features\\FreeRangeNavegacion.feature", //Directorio de archivos . feature
                 glue = "steps", // PAquete donde tyenemos nuestras clases definiendo los steps escritos en el feature file
-                plugin = { "pretty", "html:target/cucumber-reports" }
-)
+                plugin = { "pretty", "html:target/cucumber-reports" } ,
+                tags = "@Plans")
 
 public class TestRunner {
     @AfterClass public static void cleanDriver(){
-        //BasePage.closeBrowser();
+        BasePage.closeBrowser();
     }
     
 }
