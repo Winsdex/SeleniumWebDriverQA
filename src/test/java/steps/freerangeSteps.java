@@ -48,7 +48,7 @@ public class freerangeSteps {
 
         List<String> lista = registros.returnPlanDropwnValues();
         List<String> listaEsperada = Arrays.asList("Academia: $16.99 / mes • 12 productos", 
-                                                 "Academia: $176 / año • 12 productos",
+                                                 "Academia: $1760 / año • 12 productos",
                                                   "Free: Gratis • 1 producto");
 
         Assert.assertEquals(listaEsperada, lista);
