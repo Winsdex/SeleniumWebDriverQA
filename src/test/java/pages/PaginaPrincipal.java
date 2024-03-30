@@ -2,8 +2,9 @@ package pages;
 
 public class PaginaPrincipal extends BasePage {
 
-    private String sectionLink = "//a[normalize-space()='%s' and @href]";
+    private String sectionLink = "//a[@class='sc-bkzXAi jsTIvP sc-dIUfKc sc-gVgoeb inQYZS iIIIdF'][normalize-space()='%s']";
     private String elegirUnPlan = "//a[normalize-space()='Elegir Plan' and @href]";
+    private String botonCastroso = "//button[@class='sc-eFtZDC jkBUwB']";
     
     public PaginaPrincipal() {
         //Constructor de la supeclase inacializado
@@ -12,11 +13,18 @@ public class PaginaPrincipal extends BasePage {
          
     }
 
+
+
     //Metodo patra navegas a www.freerangetester.com
     public void navigatetoFreeRangeTester(){
         
         navigateTo("https://www.freerangetesters.com/");
     
+    }
+
+    //presionar al boton castroso 
+    public void clickBotonInicio(){
+        clickElement(botonCastroso);
     }
     
     public void clickOnNavigationBar(String section){

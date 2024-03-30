@@ -99,25 +99,35 @@ public class BasePage {
 
     }
 
+          //Funcion para escribIr en una caja de texto 
        public void write(String locator, String keyTosend){
         Find(locator).clear(); //Esto ace que borre en automatico el texto que se encintraba ya ahi
         Find(locator).sendKeys(keyTosend);
 
        } 
+
+       //Funcion que seleccna un valor de un dropdowm por su nombre o valor 
        public void selectFromDropdpwnByValue(String locator, String value){
             Select dropdown = new Select(Find(locator));
             //Aqui esta la parte del codigo donde nos va permitir hacer el uso del select por el valor
             dropdown.selectByValue(value);
        }
 
-       //Difrencias importantes index es integer por que es una posicioo
+       //Difrencias importantes index es integer por que es una posicion
        public void selectFromDropdpwnByIndex(String locator, Integer index){
         Select dropdown = new Select(Find(locator));
         //Aqui esta la parte del codigo donde nos va permitir hacer el uso del select por el index
         dropdown.selectByIndex(index);
 
         }
+        public void selectAllFromDropDown(String locator){
+            Select dropdown = new Select(Find(locator));
+            dropdown.getAllSelectedOptions();
 
+        }
+
+
+        //Funcion para seleccionar y encontrar los valores de un drop
         public int dropdownSize(String locator){
             Select dropdown = new Select(Find(locator));
             List<WebElement> dropdownOptions = dropdown.getOptions();
@@ -127,7 +137,7 @@ public class BasePage {
 
         }
         
-        
+        //Funcion para encontrar los valores de un dropdown
         public List<String> getDropdownValues(String locator){
             Select dropdown = new Select(Find(locator));
             List<WebElement> dropdownOpstions = dropdown.getOptions();
@@ -139,7 +149,7 @@ public class BasePage {
             return values;
 
         }
-
-
-
+        
+      
+    
 }

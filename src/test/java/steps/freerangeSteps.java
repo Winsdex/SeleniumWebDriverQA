@@ -29,7 +29,7 @@ public class freerangeSteps {
 
     @When("I go to {word} using navigation bar")
     public void navigationBarUse(String section){
-        
+        landingPage.clickBotonInicio();
         landingPage.clickOnNavigationBar(section);
 
     }
@@ -82,11 +82,18 @@ public class freerangeSteps {
     public void iNAvigateToGG(){
         google.navigateTogoogle();
     }
+    
+    @Then("I can write Guacamayas in the textbox")
+        public void WriteinBoxText(){
+            google.writeTextBox();
+        }
+    
 
-    @Then("I can search whithe the botoun")
+
+    @And("I can search whithe the botoun")
     public void pressSearch(){
         google.clickGoogleSearsh();
-
+        google.clikGuacamya();
 
     }
     
