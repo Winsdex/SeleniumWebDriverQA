@@ -5,7 +5,9 @@ Feature: Navigation bar
     i can  click the navigation bar links
 
     Background: I am on Free Range Testers web without logging in.
-        Given I navigate to www.freerangetesters.com
+        Given I navigate to www.google.com
+    #     Given I navigate to www.freerangetesters.com
+
 
     @Tabla
     Scenario Outline: I can access the subpages throght the navigation bar
@@ -26,7 +28,12 @@ Feature: Navigation bar
     Scenario: Users can select a plan when signing up
         When I select Elegir Plan
         Then I can validate the option in the steps
-        
+
+
+    @Google
+    Scenario: user can naviagte google
+        Then I can search whithe the botoun
+
 
 
     

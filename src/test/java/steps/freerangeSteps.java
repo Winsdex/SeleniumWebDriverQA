@@ -9,6 +9,7 @@ import io.cucumber.java.en.*;
 import pages.PaginaCursos;
 import pages.PaginaPrincipal;
 import pages.PaginaRegistro;
+import pages.googlePage;
 import pages.PaginaFundamentosDeTesting;
 
 public class freerangeSteps {
@@ -18,6 +19,7 @@ public class freerangeSteps {
     PaginaCursos cursosPage = new PaginaCursos();
     PaginaFundamentosDeTesting fundamentosPage = new PaginaFundamentosDeTesting();
     PaginaRegistro registros = new PaginaRegistro();
+    googlePage google = new googlePage();
 
 
     @Given("I navigate to www.freerangetesters.com")
@@ -75,6 +77,19 @@ public class freerangeSteps {
         // soft.assertNotEquals(PalabaraEsperada, PalabraEncontrada);
         //  soft.assertAll();
     // }
+
+    @Given("I navigate to www.google.com")
+    public void iNAvigateToGG(){
+        google.navigateTogoogle();
+    }
+
+    @Then("I can search whithe the botoun")
+    public void pressSearch(){
+        google.clickGoogleSearsh();
+
+
+    }
+    
 
     
 
