@@ -96,9 +96,14 @@ public class freerangeSteps {
         google.clikGuacamya();
 
     }
-    
-
-    
+    /*Then(Implementacion del metodo de la tabla)
+    *public void returnValue(){
+        grid = A la implementacion del metodo aqui como sea que se llame 
+        String value = grid.getValueFromTable(3,2);
+        System.out.println(value);
+    }
+    *
+    */
 
     
 }

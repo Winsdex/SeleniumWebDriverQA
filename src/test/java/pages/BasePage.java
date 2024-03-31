@@ -7,16 +7,18 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage { 
     
-
+        private static Actions action;
   /*
    * Declaracion de una variable static driver de tipo Webdriver
    * Esta variable va a ser compartida por todas las instancias de BasePae
@@ -150,6 +152,51 @@ public class BasePage {
 
         }
         
-      
-    
+        //Funcion para pasar el mouse arriba de un elemento 
+        public void hoverOverElement(String locator){
+            action.moveToElement(Find(locator));
+
+
+        }
+
+        //Funcion que hace doble click 
+        public void doubleClickElement(String locator){
+            action.doubleClick(Find(locator));
+        }
+
+        //Funcion  que hace click drecho 
+        public void rightClickElement(String locator){
+            action.contextClick(Find(locator));
+
+        }
+      //Funcion para guardarlos valores de una tabla
+        public String getValueFromTable(String locator, int row, int column){
+            String cellValue = locator+"/table/tbody/tr["+row+"]/td"+column+"]";
+            
+            return Find(cellValue).getText();
+        }
+
+        //Funcion para poner un valor en un tabla
+        public void setValueFromTable(String locator, int row, int column, String  valueToSend){
+            String cellValue = locator+"/table/tbody/tr["+row+"]/td"+column+"]";
+
+            Find(cellValue).sendKeys(valueToSend);
+            
+        }
+
+        //Funcion paa no tener problemas con los popup
+        public void switchToiFrame(int iFrameIndex){
+            driver.switchTo().frame(iFrameIndex);
+        }
+
+        public void switchToPArentFrame(){
+            driver.switchTo().parentFrame();
+        }
+
+        //Funcion que desase la aleta
+        public void dismissAlert(){
+            driver.switchTo().alert().dismiss();
+
+        }
+
 }
