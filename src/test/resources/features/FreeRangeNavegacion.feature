@@ -31,10 +31,10 @@ Feature: Navigation bar
         Then I can validate the option in the steps
 
 
-# @Google
-# Scenario: user can naviagte google
-#     Then I can write Guacamayas in the textbox
-#     And I can search whithe the botoun
+@Google
+Scenario: user can naviagte google
+    Then I can write Guacamayas in the textbox
+    And I can search whithe the botoun
 
 
 
