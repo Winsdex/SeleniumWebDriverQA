@@ -12,7 +12,7 @@ import pages.BasePage;
                 glue = "steps", // PAquete donde tyenemos nuestras clases definiendo los steps escritos en el feature file
                //plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","json:target/cucumber-rports.json"},
                 plugin = { "pretty", "html:target/cucumber-reports" } ,
-                tags = "@Tabla")
+                tags = "@Google")
 
 public class TestRunner {
     @AfterClass public static void cleanDriver(){

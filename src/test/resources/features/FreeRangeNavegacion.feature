@@ -3,10 +3,10 @@ Feature: Navigation bar
     To see subpages
     Without loging in
     i can  click the navigation bar links
-
-    Background: I am on Free Range Testers web without logging in.
-        # Given I navigate to www.google.com
-        Given I navigate to www.freerangetesters.com
+    # @Free
+    # Background: I am on Free Range Testers web without logging in.
+    #     Given I navigate to www.google.com
+    # # Given I navigate to www.freerangetesters.com
 
 
     @Tabla
@@ -31,10 +31,11 @@ Feature: Navigation bar
         Then I can validate the option in the steps
 
 
-@Google
-Scenario: user can naviagte google
-    Then I can write Guacamayas in the textbox
-    And I can search whithe the botoun
+    @Google
+    Scenario: user can naviagte google
+        Given I navigate to www.google.com
+        Then I can write Guacamayas in the textbox
+        And I can search whithe the botoun
 
 
 
