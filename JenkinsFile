@@ -1,0 +1,30 @@
+pipeline{
+    //En que agente esto va a estar corriendo 
+    agent any
+    //Que herramientas vamos a estar instalando 
+    tools{
+        gradle "Gradle"
+    }
+    stages{
+        stage("Tarea de limpieza"){
+            steps{
+                //Aaggra el repo en el que esta el codigo que necesitams correr 
+                git 'https://github.com/Winsdex/SeleniumWebDriverQA.git'
+                //ejecuta clean gradle
+                sh 'gradle clean'
+            }
+
+        }
+        stage("Imprimo cositas"){
+            steps{
+                echo "soy un Stage aparte"
+            }
+        }
+
+
+    }
+
+
+
+    
+}
